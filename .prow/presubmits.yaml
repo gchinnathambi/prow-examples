@@ -1,0 +1,16 @@
+presubmits:
+  gchinnathambi/prow-examples:
+  - name: k3s-presubmit
+    decorate: true
+    always_run: true
+    spec:
+      containers:
+      - name: k3s-container
+        image: golang
+        command:
+        - bash
+        - -c
+        - >
+          echo "Hi I am Good"
+        securityContext:
+          privileged: true
